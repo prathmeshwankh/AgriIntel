@@ -1,0 +1,24 @@
+
+
+# Dependencies
+**/node_modules/
+
+# Environment files and secrets
+**/.env
+**/.env.*
+!**/.env.example
+
+# Python cache and virtual environments
+**/__pycache__/
+*.py[cod]
+**/.venv/
+**/venv/
+
+# Build output and logs
+**/dist/
+**/build/
+*.log
+
+# Large price prediction model (over GitHub's 100 MB limit)
+AgriIntel/backend/models/price_model/best_price_model.joblib
+

@@ -1,0 +1,527 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8f8f3;
+    color: #18321f;
+}
+
+.agri-app {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 252px;
+    min-height: 100vh;
+    background: #073d20;
+    color: white;
+    padding: 30px 18px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 42px;
+}
+
+.brand-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #58a832;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.farmer-title {
+    color: #8fc39b;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.menu-item {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 16px;
+    color: #d9e9dc;
+    text-decoration: none;
+    border-radius: 9px;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.menu-item:hover {
+    background: #185d35;
+}
+
+.menu-item.active {
+    background: #26683c;
+    color: white;
+    border-left: 3px solid #a8e77f;
+}
+
+.menu-item small {
+    margin-left: auto;
+    color: #b7ed6e;
+    font-size: 9px;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+.weather {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 20px 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin-bottom: 10px;
+}
+
+.weather strong {
+    display: block;
+    font-size: 16px;
+}
+
+.weather span {
+    display: block;
+    color: #b9d3bf;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.main-content {
+    margin-left: 252px;
+    width: calc(100% - 252px);
+    min-height: 100vh;
+}
+
+.top-header {
+    height: 82px;
+    border-bottom: 1px solid #e1e1d9;
+    background: #fafaf6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 45px;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    color: #779080;
+}
+
+.breadcrumb strong {
+    color: #173820;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    color: #35523d;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #cfe7bd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.profile strong {
+    display: block;
+    font-size: 13px;
+}
+
+.profile small {
+    display: block;
+    font-size: 11px;
+    color: #829087;
+    margin-top: 3px;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.forecast-page {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 55px 35px 80px;
+}
+
+.page-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 35px;
+}
+
+.section-label {
+    color: #8b9d91;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.page-heading h1 {
+    margin: 13px 0 8px;
+    font-size: 53px;
+    letter-spacing: -2px;
+}
+
+.page-heading p {
+    margin: 0;
+    color: #718077;
+    font-size: 18px;
+}
+
+.model-label {
+    color: #81928a;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   FILTER
+========================= */
+
+.filter-card {
+    background: white;
+    border: 1px solid #dddcd2;
+    padding: 28px;
+    display: grid;
+    grid-template-columns: 1.2fr 1.2fr 1.2fr 1.2fr 0.7fr 1.4fr;
+    gap: 16px;
+    align-items: end;
+}
+
+.field label {
+    display: block;
+    color: #728078;
+    font-size: 13px;
+    margin-bottom: 9px;
+}
+
+.field select {
+    width: 100%;
+    height: 52px;
+    padding: 0 14px;
+    border: 1px solid #d6d8d0;
+    border-radius: 5px;
+    background: white;
+    color: #203529;
+    font-size: 14px;
+    outline: none;
+}
+
+.field select:focus {
+    border-color: #2b6c3e;
+}
+
+.forecast-button {
+    height: 52px;
+    border: none;
+    border-radius: 5px;
+    background: #1d6337;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+}
+
+.forecast-button:hover {
+    background: #14502b;
+}
+
+.forecast-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.error-box {
+    margin-top: 20px;
+    background: #fff1f0;
+    border: 1px solid #e8b8b5;
+    color: #a33b34;
+    padding: 15px 18px;
+    border-radius: 6px;
+}
+
+
+/* =========================
+   SUMMARY
+========================= */
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.summary-card {
+    background: white;
+    border: 1px solid #deded6;
+    padding: 22px;
+}
+
+.summary-card.highlight {
+    background: #f1f8ed;
+    border-color: #c4dfb8;
+}
+
+.summary-card span {
+    display: block;
+    color: #758078;
+    font-size: 13px;
+    margin-bottom: 9px;
+}
+
+.summary-card strong {
+    display: block;
+    color: #183b24;
+    font-size: 27px;
+}
+
+.summary-card small {
+    color: #8b968f;
+    display: block;
+    margin-top: 6px;
+}
+
+.positive {
+    color: #3c8e35 !important;
+}
+
+.negative {
+    color: #b34a42 !important;
+}
+
+
+/* =========================
+   CHART
+========================= */
+
+.chart-card {
+    margin-top: 22px;
+    background: white;
+    border: 1px solid #deded6;
+    padding: 28px;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chart-header h2 {
+    margin: 0;
+    font-size: 23px;
+}
+
+.chart-header p {
+    margin: 7px 0 0;
+    color: #87918a;
+    font-size: 13px;
+}
+
+.chart-badge {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 9px 13px;
+    border-radius: 20px;
+    background: #edf7e9;
+    color: #3d8838;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.chart-container {
+    width: 100%;
+    height: 370px;
+    margin-top: 25px;
+}
+
+.no-chart {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #849087;
+}
+
+
+/* =========================
+   RECOMMENDATION
+========================= */
+
+.recommendation {
+    margin-top: 22px;
+    padding: 23px;
+    background: #eef6e9;
+    border: 1px solid #d0e1c6;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.recommendation-icon {
+    font-size: 30px;
+}
+
+.recommendation h3 {
+    margin: 0 0 7px;
+    font-size: 18px;
+}
+
+.recommendation p {
+    margin: 0;
+    color: #5e6d63;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+    .filter-card {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .sidebar {
+        width: 70px;
+        padding: 20px 10px;
+    }
+
+    .brand span,
+    .farmer-title,
+    .menu-item span,
+    .menu-item small,
+    .weather div {
+        display: none;
+    }
+
+    .brand {
+        justify-content: center;
+    }
+
+    .menu-item {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .main-content {
+        margin-left: 70px;
+        width: calc(100% - 70px);
+    }
+
+    .filter-card {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-heading {
+        display: block;
+    }
+
+    .model-label {
+        margin-top: 20px;
+    }
+
+    .page-heading h1 {
+        font-size: 40px;
+    }
+
+}
